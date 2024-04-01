@@ -50,7 +50,7 @@
             </div>
             <div class="right">
                 <div class="addBtn">
-                    <button class="addSpend">Add Expense/Income</button>
+                    <button id="addSpend" class="addSpend">Add Expense/Income</button>
                 </div>
                 <div class="recentTrn">
                     <p style="margin-top: 10px;">Recent Transactions</p>
@@ -59,5 +59,48 @@
             </div>
         </div>
     </section>
+    <div class="popup">
+        <div>
+            
+            <section class="container-pop">
+                <button id="closePop"><a href="#" class="close"></a></button>
+                <h3 style="padding: 2%;padding-bottom: 2.5%; text-align: center;">A d d &nbsp; T r a n s a c t i o n</h3>
+
+                <form id="transactionForm">
+                  <div style="padding-top: 1%;padding-bottom: 1%;">
+                    <label for="type">
+                      <input  type="checkbox" name="type" id="type" />
+                      <div class="option">
+                        <span>Expense</span>
+                        <span>Income</span>
+                      </div>
+                    </label>
+                  </div>
+                  <div>
+                    <label for="name">Description</label>
+                    <input id="Desc" type="text" name="name" required />
+                  </div>
+                  <div>
+                    <label for="amount">Amount</label>
+                    <input
+                      id="amt"
+                      type="number"
+                      name="amount"
+                      value="0"
+                      min="0.01"
+                      step="0.01"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="date">Date</label>
+                    <input id="date" type="date" name="date" required >
+                  </div>
+                  <button type="submit" class="submit">ADD</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <script src="./script.js"></script>
 </body>
 </html>
