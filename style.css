@@ -74,17 +74,17 @@ body{
 }
 .pie{
     height: 20em;
-    width: 20em;
+    width: 40em;
     border-radius: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .spending_pie{
     background-color: #FED053;
 }
 .earning_pie{
     background-color: #F5B301;
-}
-.Btncnt{
-    
 }
 .btn{
     width:150%;
@@ -285,4 +285,31 @@ position: relative;
   .close:after {
     transform: rotate(-45deg);
   }
-/**/  
+/* transaction add */  
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+  
+  .list li {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    margin: 10px 5px;
+    border-radius: 5px;
+  }
+  
+  .list li.plus {
+    background-color: #2ecc7099;
+  }
+  
+  .list li.minus {
+    background-color: #c03a2b93;
+  }
+  
+  /* The close button */
