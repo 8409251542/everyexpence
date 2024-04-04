@@ -67,6 +67,8 @@ function addTrasaction(e){
    updateChart();
 }
 console.log(transactionData);
-// chart
-
-//
+// showheading
+function showHeading(){
+    let h1 = document.getElementById("heading");
+    h1.innerText=eraning;
+}

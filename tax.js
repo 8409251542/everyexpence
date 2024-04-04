@@ -1,7 +1,6 @@
-
 var options = {
     "key": "rzp_test_Qc7lgszRzPlCSc", // Enter the Key ID generated from the Dashboard
-    "amount": `4500`, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+    "amount": `3000`, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
     "currency": "INR",
     "name": "Acme Corp", //your business name
     "description": "Test Transaction",

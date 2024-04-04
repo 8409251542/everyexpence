@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Every expence</title>
+</head>
+<body >
+        
+
+    <div style="height: 100%;" class="flex items-center justify-center w-full">
+        
+        <div class="flex justify-center items-center dark:bg-gray-800 h-screen w-full">
+            <div class="relative cursor-pointer dark:text-white">
+                <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-amber-500 rounded-lg dark:bg-gray-200"></span>
+                <div
+                    class="relative p-6 bg-white dark:bg-gray-800 border-2 border-amber-500 dark:border-gray-300 rounded-lg hover:scale-105 transition duration-500">
+                    <div class="flex items-center">
+                        <span class="text-xl">😎</span>
+                        <h3 class="my-2 ml-3 text-lg font-bold text-gray-800 dark:text-white">Pay our Tax!</h3>
+                    </div>
+                    <h1 id="heading"></h1>
+                    <p class=" m-25px text-gray-600 dark:text-gray-300">
+                        Pay our tax as pr your income!
+                    </p>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    <button type="button" class="text-white bg-amber-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-amber-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 m-25px dark:focus:ring-yellow-900" id="rzp-button1">Pay</button>
+    <script src="./script.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="./tax.js"></script>
+</body>
+</html>
