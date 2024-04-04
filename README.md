@@ -1,4 +1,4 @@
-Expense Tracker by Skolers
+Expense Tracker
 
 Problem statement:
 Create a web-based personal finance tracker using Javascript, HTML and CSS. The application should allow users to add, edit and delete income and expense transactions and display the current balance. Use GitHub Copilot to guide you in implementing features, handling user input and designing a responsive user interface.
@@ -16,4 +16,4 @@ HTML5
 CSS3
 JavaScript
 
-link:-
+link:-https://8409251542.github.io/everyexpence/
