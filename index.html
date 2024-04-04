@@ -26,7 +26,7 @@
                         </span> Spending</button></div>
             
                 </div>
-                <div class="ai Btncnt"><button class="btn" style="margin-bottom: 10px;">Invest With AI</button></div>
+                <div class="ai Btncnt"><button id="investAI" class="btn" style="margin-bottom: 10px;">Invest With AI</button></div>
             </div>
             
         </div>
@@ -72,7 +72,7 @@
                                     </div>
                     
                                     <div id="remain" class="text-3xl dark:text-gray-100">
-                                        
+                                        15000
                                     </div>
                     
                                     <div class="flex items-center space-x-1 rtl:space-x-reverse text-sm font-medium text-green-600">
@@ -111,12 +111,15 @@
                                         </svg>
                                     </div>
                                 </div>
-                    
+                                
                             </div>
                         </div>
+                        
                     </div>
+                    <button id="rzp-button1" ><a href="./Tax.html">Pay Tax</a></button>
                     <!-- Stats End -->
                 </div>
+                <!-- middle area -->
                 <b class="heading">O&nbsp;v&nbsp;e&nbsp;r&nbsp;v&nbsp;i&nbsp;e&nbsp;w</b>
                 <div class="overview">
                     <div class="pie earning_pie">
@@ -129,6 +132,8 @@
                 
                 
             </div>
+            <!-- middle ends -->
+            <!-- Right Section -->
             <div class="right">
                 <div class="addBtn">
                     <button id="addSpend" class="addSpend">Add Expense/Income</button>
@@ -143,7 +148,9 @@
                 </div>
             </div>
         </div>
+        <!-- Right ends -->
     </section>
+    <!-- add Transaction -->
     <div class="popup">
         <div>
             
@@ -186,10 +193,88 @@
             </section>
         </div>
     </div>
+    <!-- add transaction end -->
+
+    <!-- invest with Ai -->
+    <div class="popupai popup bg-slate-800/95">
+        <h1 style="color: #F5B301; padding: 2%;padding-bottom: 2.5%; text-align: center; position: fixed; top: 0;font-size: 36px;">I n v e s t &nbsp; W i t h &nbsp; AI</h1>
+        <div>
+            
+            <section class="container-popAI">
+                <button style="color: azure;" id="closePopAi"><a href="#" class="close"></a></button>
+                
+                <div class="result" >
+                    <ul id="listnew" class="list">
+                        
+                    </ul>
+                </div>
+                <div class="searchInputWrapper">
+                    <input id="askQue" class="searchInput" type="text" placeholder='If any qurey ask Further!'>
+                    <button id="searq" class="button">
+                        <span class="text">Go</span>
+                        <div class="overlay">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                          </svg>
+                        </div>
+                      </button>
+                  </div>
+            </section>
+        </div>
+    </div>
+    <!-- invest with AI -->
     
     <script src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./chart.js"></script>
-    
+    <script src="invest.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+      </script>
+      <script type ="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+        const API_KEY = "AIzaSyCl2Ste-OJ61OsjXdBtDOM8hAjZY6eBnmk";
+        // Access your API key (see "Set up your API key" above)
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        document.getElementById("investAI").addEventListener("click", run);
+       document.getElementById("searq").addEventListener("click", run);
+        
+        async function run() {
+          // alert("fun run");
+          // For text-only input, use the gemini-pro model
+          let li = document.getElementById("listnew");
+          const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+          let asK = document.getElementById("askQue").value;
+          //console.log(asK);
+          let userMesageDisplayDiv = document.createElement("ul");
+          userMesageDisplayDiv.className = 'aiQue';
+          userMesageDisplayDiv.innerText = ` ${asK}`;
+          li.appendChild(userMesageDisplayDiv);
+        let prompt;
+        if (asK!="") {
+            prompt =`${asK}`;
+         } else {
+            prompt =`Best ways to to invest my weekly saving of ${remaining}`;
+         }
+          const result = await model.generateContent(prompt);
+          const response = await result.response;
+          console.log(response);
+          const text = response.text();
+          console.log(text);
+          
+           let botmessagediv = document.createElement("ul");
+          botmessagediv.className = "aiAns";
+       botmessagediv.innerText = ` ${text}`;
+       li.appendChild(botmessagediv);
+    }
+      </script>
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+      <script src="./tax.js"></script>
+  
 </body>
 </html>

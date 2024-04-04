@@ -6,7 +6,7 @@ const ctx = document.getElementById('myChart');
     data: {
       labels: ['Earnning','Spending','Remaining'],
       datasets: [{
-        label: '# of Votes',
+        label: '',
         data: [eraning,spendinng,remaining],
         borderWidth: 1
       }]

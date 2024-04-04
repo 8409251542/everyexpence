@@ -53,6 +53,8 @@ body{
     border-radius: 5px;
     text-align: center;
     box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.728);
+    overflow: auto;
+    overflow-x: hidden;
 }
 .addSpend{
     padding: 10px 15px;
@@ -313,3 +315,136 @@ position: relative;
   }
   
   /* The close button */
+  /* AI pop */
+  .container-popAI{
+    
+    display: flex; /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     position: fixed; /* Stay in place */
+     z-index: 1; /* Sit on top */
+     padding: 10px 10px ; /* Location of the box */
+     left: 0;
+     top: 0;
+     width: 75%; /* Full width */
+     height: 80%; /* Full height */
+    /* overflow: auto; /* Enable scroll if needed */
+     margin-left: 11%;
+     margin-top: 5%;
+     background-color: rgb(248, 246, 246); /* Fallback color */
+     background-color:#1E2328;
+      /* Black w/ opacity */
+   
+}
+.result{
+    overflow-y: auto;
+    height: 85%;
+    width: 90%;
+    margin-bottom: 10px;
+}
+/* search in AI */
+.searchInputWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+  }
+  
+  .searchInput {
+    width: 20rem;
+    height: 2rem;
+    padding: 0 1rem; 
+    border-radius: 2rem;
+    border: none;
+    transition: transform 0.1s ease-in-out;
+  }
+  
+  ::placeholder {
+    color: #a1a1a1;
+  }
+  
+  /* hide the placeholder text on focus */
+  :focus::placeholder {
+    text-indent: -999px
+  }
+  
+  .searchInput:focus {
+    outline: none;
+    transform: scale(1.1);
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .searchInputIcon {
+    position: absolute;
+    right: 0.8rem;
+    top: 0.5rem;
+    color: #a1a1a1;
+    transition: all 0.1s ease-in-out;
+  }
+  .aiQue{
+    color:#F5B301;
+    background-color:#1E2328;
+    border-left: solid 5px #F5B301;
+    padding:2px 5px;
+    margin-bottom: 5px;
+  }
+  .aiAns{
+    color:#07dd35;
+    background-color:#1E2328;
+    border-left: solid 5px #07dd35;
+    padding:2px 5px;
+    margin-bottom: 5px;
+  }
+  .button {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+    width: 7rem;
+    height: 2rem;
+    border-radius: 9999rem;
+    background: #efefef;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+  
+    & > span.text {
+      color: #121212;
+      width: 100%;
+      text-align: left;
+      padding-block: 12px;
+      padding-left: 24px;
+      z-index: 2;
+      transition: all 200ms ease;
+    }
+  
+    & > div.overlay {
+      color: #ededed;
+      width: 48px;
+      height: calc(100% - 2px);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 12px;
+      border-radius: inherit;
+      background: #242424;
+      position: absolute;
+      right: 1px;
+      z-index: 1;
+      transition: all 400ms ease;
+    }
+  
+    &:is(:hover, :focus) {
+      & > span.text {
+        color: #ededed;
+      }
+      & > div.overlay {
+        width: calc(100% - 2px);
+        transition: width 200ms ease;
+      }
+    }
+  }
